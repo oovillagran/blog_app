@@ -18,7 +18,7 @@ fourth_user = User.create(name: 'Laura', photo: 'https://example.com/laura.jpg',
 first_post = Post.create(author: first_user, title: 'Hello', text: 'This is my first post')
 second_post = Post.create(author: first_user, title: 'Update', text: 'This is my second post')
 third_post = Post.create(author: first_user, title: 'Cheers', text: 'This is my third post')
-forth_post = Post.create(author: first_user, title: 'Hey', text: 'This is my fourth post')
+fourth_post = Post.create(author: first_user, title: 'Hey', text: 'This is my fourth post')
 
 # Create Post Comments
 
@@ -28,6 +28,22 @@ Comment.create(post: first_post, author: fourth_user, text: 'Congratulations')
 Comment.create(post: first_post, author: first_user, text: 'Excellent')
 Comment.create(post: first_post, author: second_user, text: 'Good job')
 Comment.create(post: first_post, author: third_user, text: 'Like it')
+
+Comment.create(post: fourth_post, author: fourth_user, text: 'Test1')
+Comment.create(post: fourth_post, author: fourth_user, text: 'Test2')
+Comment.create(post: fourth_post, author: fourth_user, text: 'Test3')
+Comment.create(post: fourth_post, author: fourth_user, text: 'Test4')
+Comment.create(post: fourth_post, author: fourth_user, text: 'Test5')
+Comment.create(post: fourth_post, author: fourth_user, text: 'Test6')
+
+puts "#{fourth_post.comments.count} | Comments for post #{fourth_post.title} created"
+
+# Create Post Likes
+
+Like.create(post: fourth_post, author: first_user)
+Like.create(post: fourth_post, author: second_user)
+Like.create(post: fourth_post, author: third_user)
+Like.create(post: fourth_post, author: fourth_user)
 
 # Find a user by Name
 
@@ -41,19 +57,20 @@ puts "User #{find_user.name} updated"
 
 # Find a post by ID
 
-post = Post.find(1)
+find_post = Post.find(1)
+puts "#{find_post.title} found and says #{find_post.text}"
 
 # Update post attributes
-post.title = 'New Title'
-post.save
+find_post.title = 'New Title'
+find_post.save
+puts "The post title has change to #{find_post.title}"
 
 # Find and Delete a Comment
-find_comment = post.comments.find_by(text: 'Nice') if post
+find_comment = find_post.comments.find_by(text: 'Nice') if find_post
 puts "Comment Text: #{find_comment.text}"
-puts "Coment Count before deletion: #{post.comments.count}"
+puts "Coment Count before deletion: #{find_post.comments.count}"
 find_comment.destroy
 puts "Coment Count after deletion: #{post.comments.count}"
-
 
 # Create Custom Methods
 
@@ -69,16 +86,13 @@ end
 puts "Posts counter for user #{first_user.name}: #{first_user.posts_counter}"
 
 # Posts: method which returns the 5 most recent comments for a given post.
-
-commented_post = Post.find_by(title: 'Hello')
-post_author = commented_post.author.name
+commented_post = fourth_post
 five_most_recent_comments = commented_post.five_most_recent_comments
 
-puts "Five most recent comments in '#{commented_post.title}' by '#{post_author}' for user '#{find_user.name}':"
+puts "Five most recent comments in '#{fourth_post.title}' post by '#{fourth_post.author.name}' for the user '#{find_user.name}':"
 five_most_recent_comments.each do |comment|
   puts "Comment #{comment.id} | #{comment.text}"
 end
-
 
 # Comments: a method that updates the comments counter for a post.
 
