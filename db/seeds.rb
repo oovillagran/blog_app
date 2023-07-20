@@ -69,8 +69,8 @@ puts "The post title has change to #{find_post.title}"
 find_comment = find_post.comments.find_by(text: 'Nice') if find_post
 puts "Comment Text: #{find_comment.text}"
 puts "Coment Count before deletion: #{find_post.comments.count}"
-find_comment.destroy
-puts "Coment Count after deletion: #{post.comments.count}"
+# find_comment.destroy
+# puts "Coment Count after deletion: #{post.comments.count}"
 
 # Create Custom Methods
 
