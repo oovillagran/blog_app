@@ -75,6 +75,6 @@ end
 gem 'rubocop', '>= 1.0', '< 2.0'
 
 # Rspec
-group :development, :test do  
+group :development, :test do
   gem 'rspec-rails'
 end
