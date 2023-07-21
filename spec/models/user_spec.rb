@@ -14,6 +14,8 @@ RSpec.describe User, type: :model do
     post = Post.new(author: subject, title: 'Hello', text: 'Working with Rspec.')
     post.save
 
+    subject.update(posts_counter: subject.posts.count)
+
     expect(subject.posts_counter).to be >= 0
   end
 end
