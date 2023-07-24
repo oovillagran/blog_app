@@ -83,6 +83,21 @@ This example shows how to install Ruby 3.0.1 which was the latest version in Apr
 
 Once you have ruby installed, [clone this repository](https://docs.github.com/en/repositories/creating-and-managing-repositories/cloning-a-repository)
 
+To run the project, execute the following command in the terminal:
+```
+rails server
+```
+In your preferred browser, navigate to:
+```
+http://localhost:3000
+```
+
+### Run tests
+To run tests, run the following command in the terminal:
+```
+rspec
+```
+
 <!-- AUTHORS -->
 
 ## 👥 Authors <a name="authors"></a>
