@@ -1,7 +1,6 @@
 require 'rails_helper'
 
 RSpec.describe PostsController, type: :request do
-
   describe 'GET #index' do
     before { get user_posts_path(user_id: 1) }
 
