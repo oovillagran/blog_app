@@ -78,3 +78,6 @@ gem 'rubocop', '>= 1.0', '< 2.0'
 group :development, :test do
   gem 'rspec-rails'
 end
+
+# Assert_Template(rende_template) specs
+gem 'rails-controller-testing'
