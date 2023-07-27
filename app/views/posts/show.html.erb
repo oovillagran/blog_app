@@ -26,18 +26,28 @@
         </ul>
       <% end %>
 
-      <h2>Add a Comment</h2>
-      <%= form_with(model: [@post, Comment.new], url: user_post_comments_path(@post.author, @post)) do |form| %>
-        <%= form.label :text %>
-        <%= form.text_area :text, required: true %>
-
-        <%= form.submit 'Add Comment' %>
-      <% end %>
-
-      <h2>Like this Post</h2>
-      <%= form_with(url: user_post_like_path(@post.author, @post), method: :post) do |form| %>
-        <%= form.submit 'Like' %>
-      <% end %>
+      <div class="form flex-row">
+        <div>
+          <h2>Add a Comment</h2>
+          <%= form_with(model: [@post, Comment.new], url: user_post_comments_path(@post.author, @post)) do |form| %>
+            <div class="flex-column">
+              <div>
+                <%= form.label :text %>
+                <%= form.text_area :text, required: true %>
+              </div>
+              <div>
+                <%= form.submit 'Add Comment' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+        <div>
+          <h2>Like this Post</h2>
+          <%= form_with(url: user_post_like_path(@post.author, @post), method: :post) do |form| %>
+            <%= form.submit 'Like' %>
+          <% end %>
+        </div>
+      </div>
     </main>
   </body>
 </html>
