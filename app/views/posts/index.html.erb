@@ -4,13 +4,8 @@
   </head>
 
   <body>
-    <header>
-      <h1>This is the list of Posts for <%= @user.name %></h1>
-    </header>
-
-    <main>
+    <main class="main-section flex-colum">
       <%= render 'users/user', user: @user %>
-      <h2>List of Posts:</h2>
       <ul class="post-list flex-column">
         <% @posts.each do |post| %>
           <%= render 'users/post', post: post, user: @user %>

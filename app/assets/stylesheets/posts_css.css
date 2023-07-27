@@ -12,6 +12,10 @@ body {
   align-self: center;
 }
 
+.post-detail-show {
+  margin: 2rem 0 0.5rem;
+}
+
 .flex-row {
   display: flex;
   flex-direction: row;

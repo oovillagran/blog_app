@@ -4,18 +4,14 @@
   </head>
 
   <body>
-    <header>
-      <h1>Here are the details of the user <%= @user.name %></h1>
-    </header>
     <main>
-      <section>
+      <section class="main-section flex-column">
         <%= render 'users/user', user: @user %>
         <div class="user-bio flex-column">
           <p class="post-align">Bio:</p>
           <p class="post-align"><%= @user.bio %></p>
         </div>
 
-        <h2>This is the List of Posts:</h2>
         <ul class="post-list flex-column">
           <% @user.returns_the_three_most_recent_posts.each do |post| %>
             <li class="post-list-item flex-column">

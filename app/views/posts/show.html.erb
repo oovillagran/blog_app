@@ -4,9 +4,6 @@
   </head>
 
   <body>
-    <header>
-      <h1>Here are the details of the Post</h1>
-    </header>
     <main class="flex-column">
       <div class="post-detail-show">
         <div class="post-detail-header-show flex-row">
@@ -19,7 +16,6 @@
         </div>
         <p><%= @post.text %></p>
       </div>
-      <h2>List of Comments:</h2>
       <% if @post.comments.any? %>
         <ul class="post-comment-show">
           <% @post.comments.each do |comment| %>
