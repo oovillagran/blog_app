@@ -1,15 +1,32 @@
-<h1>Here are the details of the Post</h1>
-<div>
-  <p>Post: <%= @post.title %></p>
-  <p>Author: <%= @post.author.name %></p>
-  <p>Number of Comments: <%= @post.comments_counter %></p>
-  <p>Number of Posts: <%= @post.likes_counter %></p>
-</div>
-<h2>List of Comments:</h2>
-<ul>
-  <% @post.comments.each do |comment| %>
-    <li>
-      <%= comment.text %>
-    </li>
-  <% end %>
-</ul>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'posts_css' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>Here are the details of the Post</h1>
+    </header>
+    <main class="flex-column">
+      <div class="post-detail-show">
+        <div class="post-detail-header-show flex-row">
+          <h2 class="post-title-show">
+            Post #<%= @post.id %> by <%= @post.author.name %>
+          </h2>
+          <p class="post-counters">
+            Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+          </p>
+        </div>
+        <p><%= @post.text %></p>
+      </div>
+      <h2>List of Comments:</h2>
+      <ul class="post-comment-show">
+        <% @post.comments.each do |comment| %>
+          <li>
+            Username: <%= comment.author.name %> || Comment: <%= comment.text %>
+          </li>
+        <% end %>
+      </ul>
+    </main>
+  </body>
+</html>

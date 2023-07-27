@@ -84,3 +84,7 @@ body {
   width: 10rem;
   align-self: center;
 }
+
+.comments-list {
+  border: #000 1px solid;
+}

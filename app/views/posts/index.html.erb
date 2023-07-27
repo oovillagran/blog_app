@@ -11,19 +11,16 @@
     <main>
       <%= render 'users/user', user: @user %>
       <h2>List of Posts:</h2>
-      <ul>
+      <ul class="post-list flex-column">
         <% @posts.each do |post| %>
-          <li>
-            <div>
-              <h3>
-                
-              </h3>
-              
-            </div>
-            <%= link_to post.title, user_post_path(@user, post) %>(Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>)
-          </li>
+          <%= render 'users/post', post: post, user: @user %>
         <% end %>
       </ul>
+      <div class="btn flex-column">
+        <button class="see-btn" type="button">
+          Pagination
+        </button>
+      </div>
     </main>
   </body>
 </html>
