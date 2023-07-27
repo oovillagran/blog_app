@@ -33,6 +33,11 @@
 
         <%= form.submit 'Add Comment' %>
       <% end %>
+
+      <h2>Like this Post</h2>
+      <%= form_with(url: user_post_like_path(@post.author, @post), method: :post) do |form| %>
+        <%= form.submit 'Like' %>
+      <% end %>
     </main>
   </body>
 </html>
