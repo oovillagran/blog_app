@@ -8,7 +8,7 @@
 <ul>
   <% @posts.each do |post| %>
     <li>
-      <%= link_to post.tile, user_post_path(@user, post) %>(Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>)
+      <%= link_to post.title, user_post_path(@user, post) %>(Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>)
     </li>
   <% end %>
 </ul>
