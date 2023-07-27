@@ -20,13 +20,15 @@
         <p><%= @post.text %></p>
       </div>
       <h2>List of Comments:</h2>
-      <ul class="post-comment-show">
-        <% @post.comments.each do |comment| %>
-          <li>
-            Username: <%= comment.author.name %> || Comment: <%= comment.text %>
-          </li>
-        <% end %>
-      </ul>
+      <% if @post.comments.any? %>
+        <ul class="post-comment-show">
+          <% @post.comments.each do |comment| %>
+            <li>
+              Username: <%= comment.author.name %> || Comment: <%= comment.text %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
     </main>
   </body>
 </html>
