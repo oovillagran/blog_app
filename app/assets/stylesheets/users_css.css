@@ -51,3 +51,36 @@ body {
   margin: 0 !important;
   padding: 1.5rem;
 }
+
+.user-bio {
+  align-items: center;
+  margin: 2rem;
+  border: #000 1px solid;
+}
+
+.post-list {
+  align-items: center;
+  gap: 2rem;
+  align-self: center;
+  justify-content: center;
+  justify-items: center;
+}
+
+.post-list-item {
+  border: #000 1px solid;
+  width: 40rem;
+  margin-bottom: 1rem;
+}
+
+.post-align {
+  align-self: flex-start;
+}
+
+.counter-align {
+  align-self: flex-end;
+}
+
+.see-btn {
+  width: 10rem;
+  align-self: center;
+}
