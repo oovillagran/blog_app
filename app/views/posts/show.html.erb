@@ -25,6 +25,14 @@
           <% end %>
         </ul>
       <% end %>
+
+      <h2>Add a Comment</h2>
+      <%= form_with(model: [@post, Comment.new]) do |form| %>
+        <%= form.label :text %>
+        <%= form.text_area :text %>
+
+        <%= form.submit 'Add Comment' %>
+      <% end %>
     </main>
   </body>
 </html>
