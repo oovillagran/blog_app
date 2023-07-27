@@ -5,11 +5,11 @@ Rails.application.routes.draw do
   root 'users#index'
 
   resources :users, only: [:index, :show] do
-    resources :posts, only: [:index, :show]
+    resources :posts, only: [:index, :show] do
+      post 'like', to: 'likes#create'
+      resources :comments, only: [:create]
+    end
   end
 
-  resources :posts, only: [:new, :create] do
-    resources :comments, only: [:create]
-    post 'like', to: 'likes#create'
-  end
+  resources :posts, only: [:new, :create]
 end
