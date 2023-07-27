@@ -8,10 +8,10 @@
 
 # Create Users
 
-first_user = User.create(name: 'Tom', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Mexico.')
-second_user = User.create(name: 'Lilly', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Teacher from Poland.')
-third_user = User.create(name: 'James', photo: 'https://example.com/james.jpg', bio: 'Teacher from Argentina.')
-fourth_user = User.create(name: 'Laura', photo: 'https://example.com/laura.jpg', bio: 'Teacher from Bolivia.')
+first_user = User.create(name: 'Tom', photo: 'https://images.unsplash.com/photo-1508921912186-1d1a45ebb3c1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=387&q=80', bio: 'Teacher from Mexico.')
+second_user = User.create(name: 'Lilly', photo: 'https://images.unsplash.com/photo-1530365508419-012585d6aba4?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDV8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60', bio: 'Teacher from Poland.')
+third_user = User.create(name: 'James', photo: 'https://images.unsplash.com/photo-1642978276901-29ef66b39ebc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDExfHx8ZW58MHx8fHx8&auto=format&fit=crop&w=500&q=60', bio: 'Teacher from Argentina.')
+fourth_user = User.create(name: 'Laura', photo: 'https://images.unsplash.com/photo-1508922088233-a07c9cc6972f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D&auto=format&fit=crop&w=500&q=60', bio: 'Teacher from Bolivia.')
 
 # Create Posts
 
