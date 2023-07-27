@@ -9,15 +9,7 @@
     </header>
     <main>
       <section>
-        <div class="user-list flex-row">
-          <div class="img-box">
-            <img src="<%= @user.photo %>" alt="user-image" width="96" height="96">
-          </div>
-          <div class="user-info flex-row">
-            <h2 class="user-name"><%= @user.name %></h2>
-            <p class="user-posts-number">Number of Posts: <%= @user.posts_counter %></p>
-          </div>
-        </div>
+        <%= render 'users/user', user: @user %>
         <div class="user-bio flex-column">
           <p class="post-align">Bio:</p>
           <p class="post-align"><%= @user.bio %></p>
@@ -28,7 +20,7 @@
           <% @user.posts.each do |post| %>
             <li class="post-list-item flex-column">
               <h3 class="post-id post-align">Post #<%=  link_to post.id, user_post_path(@user, post) %></h3>
-              <h3 class="post-title post-align">Title: <%=  link_to post.title, user_post_path(@user, post) %></h3>
+              <h2 class="post-title post-align">Title: <%=  link_to post.title, user_post_path(@user, post) %></h2>
               <p class="post-text post-align"><%= post.text %></p>
               <p class="comments-likes-counter counter-align">
                 Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
@@ -37,7 +29,9 @@
           <% end %>
         </ul>
         <div class="btn flex-column">
-          <button class="see-btn" type="button">See all posts</button>
+          <button class="see-btn" type="button">
+            <%= link_to "See all posts", user_posts_path(@user) %>
+          </button>
         </div>
       </section>
     </main>

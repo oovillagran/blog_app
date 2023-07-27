@@ -10,15 +10,7 @@
     <main>
       <section class="users-section flex-column">
         <% @users.each do |user| %>
-          <div class="user-list flex-row">
-            <div class="img-box">
-              <img src="<%= user.photo %>" alt="user-image" class="photo" width="96" height="96">
-            </div>
-            <div class="user-info flex-row">
-              <h2 class="user-name"><%= link_to user.name, user_path(user) %></h2>
-              <p class="user-posts-number">Number of Posts: <%= user.posts_counter %></p>
-            </div>
-          </div>
+          <%= render 'users/user', user: user %>
         <% end %>
       </section>  
     </main>

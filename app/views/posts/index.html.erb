@@ -1,14 +1,30 @@
-<h1>Here is the list of Posts for a given user</h1>
-<div>
-  <%= image_tag @user.photo %>
-  <h2>Name: <%= @user.name %></h2>
-  <p>Number of Posts: <%= @user.posts_counter %></p>
-</div>
-<h2>List of Posts:</h2>
-<ul>
-  <% @posts.each do |post| %>
-    <li>
-      <%= link_to post.title, user_post_path(@user, post) %>(Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>)
-    </li>
-  <% end %>
-</ul>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_css' %>
+  </head>
+
+  <body>
+    <header>
+      <h1>This is the list of Posts for <%= @user.name %></h1>
+    </header>
+
+    <main>
+      <%= render 'users/user', user: @user %>
+      <h2>List of Posts:</h2>
+      <ul>
+        <% @posts.each do |post| %>
+          <li>
+            <div>
+              <h3>
+                
+              </h3>
+              
+            </div>
+            <%= link_to post.title, user_post_path(@user, post) %>(Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>)
+          </li>
+        <% end %>
+      </ul>
+    </main>
+  </body>
+</html>
+
