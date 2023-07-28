@@ -1,1 +1,35 @@
-<h1>Here are the details of the user</h1>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_css' %>
+  </head>
+
+  <body>
+    <main>
+      <section class="main-section flex-column">
+        <%= render 'users/user', user: @user %>
+        <div class="user-bio flex-column">
+          <p class="post-align">Bio:</p>
+          <p class="post-align"><%= @user.bio %></p>
+        </div>
+
+        <ul class="post-list flex-column">
+          <% @user.returns_the_three_most_recent_posts.each do |post| %>
+            <li class="post-list-item flex-column">
+              <h3 class="post-id post-align">Post #<%=  link_to post.id, user_post_path(@user, post) %></h3>
+              <h4 class="post-title post-align">Title: <%=  link_to post.title, user_post_path(@user, post) %></h4>
+              <p class="post-text post-align"><%= post.text %></p>
+              <p class="comments-likes-counter counter-align">
+                Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+              </p>
+            </li>
+          <% end %>
+        </ul>
+        <div class="btn flex-column">
+          <button class="see-btn" type="button">
+            <%= link_to "See all posts", user_posts_path(@user) %>
+          </button>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

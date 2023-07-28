@@ -1,1 +1,15 @@
-<h1>Here is a list of Users</h1>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_css' %>
+  </head>
+
+  <body>
+    <main>
+      <section class="users-section flex-column">
+        <% @users.each do |user| %>
+          <%= render 'users/user', user: user %>
+        <% end %>
+      </section>  
+    </main>
+  </body>
+</html>

@@ -1,1 +1,30 @@
-<h1>Here are the details of the Post</h1>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'posts_css' %>
+  </head>
+
+  <body>
+    <main class="flex-column">
+      <div class="post-detail-show">
+        <div class="post-detail-header-show flex-row">
+          <h2 class="post-title-show">
+            Post #<%= @post.id %> by <%= @post.author.name %>
+          </h2>
+          <p class="post-counters">
+            Comments: <%= @post.comments_counter %>, Likes: <%= @post.likes_counter %>
+          </p>
+        </div>
+        <p><%= @post.text %></p>
+      </div>
+      <% if @post.comments.any? %>
+        <ul class="post-comment-show">
+          <% @post.comments.each do |comment| %>
+            <li>
+              Username: <%= comment.author.name %> || Comment: <%= comment.text %>
+            </li>
+          <% end %>
+        </ul>
+      <% end %>
+    </main>
+  </body>
+</html>

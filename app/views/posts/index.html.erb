@@ -1,1 +1,22 @@
-<h1>Here is the list of Posts for a given user</h1>
+<html>
+  <head>
+    <%= stylesheet_link_tag 'users_css' %>
+  </head>
+
+  <body>
+    <main class="main-section flex-colum">
+      <%= render 'users/user', user: @user %>
+      <ul class="post-list flex-column">
+        <% @posts.each do |post| %>
+          <%= render 'users/post', post: post, user: @user %>
+        <% end %>
+      </ul>
+      <div class="btn flex-column">
+        <button class="see-btn" type="button">
+          Pagination
+        </button>
+      </div>
+    </main>
+  </body>
+</html>
+

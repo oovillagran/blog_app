@@ -1,0 +1,19 @@
+<li class="post-detail flex-column">
+  <div class="post-list-item flex-column">
+    <h3 class="post-id post-align">Post #<%=  link_to post.id, user_post_path(@user, post) %></h3>
+    <h4 class="post-title post-align">Title: <%=  link_to post.title, user_post_path(@user, post) %></h4>
+    <p class="post-text post-align"><%= post.text %></p>
+    <p class="comments-likes-counter counter-align">
+      Comments: <%= post.comments_counter %>, Likes: <%= post.likes_counter %>
+    </p>
+  </div>
+  <% if post.comments.any? %>
+    <ul class="comments-list">
+      <% post.five_most_recent_comments.each do |comment| %>
+        <li>
+          Username: <%= comment.author.name %>, Comment: <%= comment.text %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
+</li>
