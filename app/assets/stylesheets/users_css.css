@@ -98,13 +98,22 @@ ul {
   align-self: flex-end;
 }
 
+.btn {
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  width: 100%;
+}
+
 .see-btn {
   width: 10rem;
   align-self: center;
+  margin: auto;
 }
 
 .comments-list {
   border: #000 1px solid;
+  width: 100%;
 }
 
 .post-detail {

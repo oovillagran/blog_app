@@ -1,0 +1,26 @@
+<html>
+  <head>
+    <%= stylesheet_link_tag 'new_posts_css' %>
+  </head>
+
+  <body class="create-post-form flex-column">
+    <header>
+      <h1>
+        Create a New Post
+      </h1>
+    </header>
+    <main>
+      <section class="form-add-post flex-column">
+        <%= form_with(model: @post, url: user_posts_path(@user)) do |form| %>
+          <%= form.label :title %>
+          <%= form.text_field :title, required: true %>
+
+          <%= form.label :text %>
+          <%= form.text_area :text, required: true %>
+
+          <%= form.submit 'Create Post', class: "new-post-btn" %>
+        <% end %>
+      </section>
+    </main>
+  </body>
+</html>
