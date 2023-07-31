@@ -2,7 +2,6 @@ class PostsController < ApplicationController
   before_action :find_user
 
   def index
-    # @user = User.find(params[:user_id])
     @posts = Post.all
     @comments = Comment.all
   end
