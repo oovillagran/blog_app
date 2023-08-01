@@ -18,11 +18,11 @@ RSpec.feature 'PostsShow', type: :feature do
     visit user_posts_path(user_id: @user.id, post_id: @post1.id)
   end
 
-  scenario "shows the post id" do
+  scenario 'shows the post id' do
     expect(page).to have_content(@post1.id)
   end
 
-  scenario "shows the post text" do
+  scenario 'shows the post text' do
     expect(page).to have_content(@post1.text)
   end
 

@@ -24,11 +24,11 @@ RSpec.feature 'PostsIndex', type: :feature do
     expect(page).to have_content(@user.name)
   end
 
-  scenario "shows the number of posts" do
-    expect(page).to have_content("Number of Posts: 3")
+  scenario 'shows the number of posts' do
+    expect(page).to have_content('Number of Posts: 3')
   end
 
-  scenario "when click on a post, it redirects to the post page" do
+  scenario 'when click on a post, it redirects to the post page' do
     post = Post.find_by(title: 'Post 1')
     click_link post.title
 

@@ -5,12 +5,11 @@ RSpec.feature 'UsersShow', type: :feature do
     @user = User.create(name: 'John', photo: 'user1.jpg', bio: 'I am John')
     @user.update(posts_counter: 5)
 
-    
-    first_post =  Post.create(title: 'First Post', text: 'First Post Text', author: @user)
-    second_post =  Post.create(title: 'Second Post', text: 'Second Post Text', author: @user)
-    third_post =  Post.create(title: 'Third Post', text: 'Third Post Text', author: @user)
-    fourth_post =  Post.create(title: 'Fourth Post', text: 'Fourth Post Text', author: @user)
-    fifth_post =  Post.create(title: 'Fifth Post', text: 'Fifth Post Text', author: @user)
+    Post.create(title: 'First Post', text: 'First Post Text', author: @user)
+    Post.create(title: 'Second Post', text: 'Second Post Text', author: @user)
+    Post.create(title: 'Third Post', text: 'Third Post Text', author: @user)
+    Post.create(title: 'Fourth Post', text: 'Fourth Post Text', author: @user)
+    Post.create(title: 'Fifth Post', text: 'Fifth Post Text', author: @user)
 
     visit user_path(@user)
   end
@@ -23,7 +22,7 @@ RSpec.feature 'UsersShow', type: :feature do
     expect(page).to have_content(@user.name)
   end
 
-  scenario "shows the number of posts" do
+  scenario 'shows the number of posts' do
     expect(page).to have_content("Number of Posts: #{@user.posts_counter}")
   end
 
@@ -40,14 +39,14 @@ RSpec.feature 'UsersShow', type: :feature do
     end
   end
 
-  scenario "when click on a post, it redirects to the post page" do
+  scenario 'when click on a post, it redirects to the post page' do
     post = Post.find_by(title: 'Third Post')
     click_link post.title
 
     expect(current_path).to eq(user_post_path(user_id: @user.id, id: post.id))
   end
 
-  scenario "displays a button to view all posts" do
+  scenario 'displays a button to view all posts' do
     expect(page).to have_link('See all posts')
   end
 end

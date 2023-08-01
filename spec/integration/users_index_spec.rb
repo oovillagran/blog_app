@@ -10,9 +10,8 @@ RSpec.feature 'UsersIndex', type: :feature do
 
     visit users_path
   end
-  
-  scenario 'index shows the username of all users' do
 
+  scenario 'index shows the username of all users' do
     @users.each do |user|
       expect(page).to have_content(user.name)
     end
