@@ -46,4 +46,8 @@ RSpec.feature 'UsersShow', type: :feature do
 
     expect(current_path).to eq(user_post_path(user_id: @user.id, id: post.id))
   end
+
+  scenario "displays a button to view all posts" do
+    expect(page).to have_link('See all posts')
+  end
 end
