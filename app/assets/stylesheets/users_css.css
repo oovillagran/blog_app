@@ -121,3 +121,7 @@ ul {
   width: 100%;
   margin: auto;
 }
+
+.pagination {
+  margin: 2rem;
+}
