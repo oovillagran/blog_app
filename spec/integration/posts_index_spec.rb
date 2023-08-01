@@ -3,9 +3,9 @@ require 'rails_helper'
 RSpec.feature 'PostsIndex', type: :feature do
   before do
     @user = User.create(name: 'John', photo: 'user1.jpg', bio: 'I am John')
-    @post1 = @user.posts.create(title: 'Post 1', text: 'Post 1 Text', likes_counter: 6)
-    @post2 = @user.posts.create(title: 'Post 2', text: 'Post 2 Text', likes_counter: 3)
-    @post3 = @user.posts.create(title: 'Post 3', text: 'Post 3 Text', likes_counter: 9)
+    @post1 = @user.posts.create(title: 'Post 1', text: 'Post 1 Text')
+    @post2 = @user.posts.create(title: 'Post 2', text: 'Post 2 Text')
+    @post3 = @user.posts.create(title: 'Post 3', text: 'Post 3 Text')
     @comment1 = @post1.comments.create(text: 'Hi friend!', author: @user)
     @comment2 = @post2.comments.create(text: 'Nice', author: @user)
     @comment3 = @post3.comments.create(text: 'Awesome', author: @user)
