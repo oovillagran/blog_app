@@ -82,4 +82,4 @@ end
 # Assert_Template(rende_template) specs
 gem 'rails-controller-testing'
 
-gem "devise", "~> 4.9"
+gem 'devise', '~> 4.9'

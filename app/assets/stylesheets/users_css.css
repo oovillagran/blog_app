@@ -70,14 +70,14 @@ ul {
   align-self: center;
   margin: 2rem;
   border: #000 1px solid;
-  width: 50%;
+  width: 38rem;
 }
 
 .post-list {
   gap: 2rem;
   align-self: center;
   justify-content: center;
-  width: 50% !important;
+  width: 38rem;
   align-items: center;
   margin: auto;
 }
