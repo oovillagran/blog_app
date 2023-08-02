@@ -13,3 +13,58 @@
  *= require_tree .
  *= require_self
  */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  padding: 1rem;
+}
+
+.new_user {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 70%;
+}
+
+.field {
+  width: 100%;
+}
+
+.field-input,
+.login-btn {
+  outline: #000 1px solid;
+  border: none;
+  border-radius: 2px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.login-btn {
+  background-color: #fff;
+  box-shadow: #000 2px 2px 2px 2px;
+}
+
+.actions {
+  margin-bottom: 2rem;
+}
+
+.log_in_form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.log_in_form a {
+  align-self: flex-start;
+  margin-left: 15%;
+  padding: 1rem 0;
+}
