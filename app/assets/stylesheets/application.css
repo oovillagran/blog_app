@@ -66,4 +66,5 @@ body {
 .log_in_form a {
   align-self: flex-start;
   margin-left: 15%;
+  padding: 1rem 0;
 }
