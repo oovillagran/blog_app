@@ -1,0 +1,12 @@
+<h2>Add a Comment</h2>
+<%= form_with(model: [@post, Comment.new], url: user_post_comments_path(params[:user_id], params[:post_id])) do |form| %>
+  <div class="flex-column">
+    <div>
+      <%= form.label :text %>
+      <%= form.text_area :text, required: true %>
+    </div>
+    <div>
+      <%= form.submit 'Add Comment' %>
+    </div>
+  </div>
+<% end %>

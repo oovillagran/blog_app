@@ -2,7 +2,8 @@ class PostsController < ApplicationController
   before_action :find_user
 
   def index
-    @posts = Post.all
+    @user = User.find(params[:user_id])
+    @posts = Post.where(author_id: @user).order(created_at: :desc)
     @comments = Comment.all
   end
 
@@ -22,6 +23,14 @@ class PostsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def destroy
+    @post = Post.find(params[:id])
+    @post.comments.destroy_all
+    @post.likes.destroy_all
+    @post.destroy
+    redirect_to user_posts_path(@user)
   end
 
   private

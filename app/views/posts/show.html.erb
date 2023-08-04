@@ -21,6 +21,7 @@
           <% @post.comments.each do |comment| %>
             <li>
               Username: <%= comment.author.name %> || Comment: <%= comment.text %>
+              <%= link_to "Delete Comment", user_post_comment_path(comment.author, comment.post, comment), data: { turbo_method: :delete }, class: 'btn' if can? :delete, comment %>
             </li>
           <% end %>
         </ul>
@@ -28,21 +29,10 @@
 
       <div class="form flex-row">
         <div>
-          <h2>Add a Comment</h2>
-          <%= form_with(model: [@post, Comment.new], url: user_post_comments_path(@post.author, @post)) do |form| %>
-            <div class="flex-column">
-              <div>
-                <%= form.label :text %>
-                <%= form.text_area :text, required: true %>
-              </div>
-              <div>
-                <%= form.submit 'Add Comment' %>
-              </div>
-            </div>
-          <% end %>
+          <%= link_to "Add comment", new_user_post_comment_path(@post.author, @post), class: 'btn' %>
         </div>
+        <%= link_to "Delete Post", user_post_path(@post.author), data: { turbo_method: :delete }, class: 'btn' if can? :delete, @post %>
         <div>
-          <h2>Like this Post</h2>
           <%= form_with(url: user_post_like_path(@post.author, @post), method: :post) do |form| %>
             <%= form.submit 'Like' %>
           <% end %>
