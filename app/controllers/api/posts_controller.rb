@@ -10,7 +10,7 @@ class Api::PostsController < ApplicationController
     @comment = @post.comments.build(text: comment_text, author: current_user)
     
     if @comment.save
-      render json: { message: 'Comment added successfully' }, status: created
+      render json: { message: 'Comment added successfully' }, status: :created
     else
       render json: { message: 'Failed to add comment' }, status: :unprocessable_entity
     end
