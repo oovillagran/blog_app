@@ -87,3 +87,6 @@ gem 'devise', '~> 4.9'
 
 #cancancan
 gem 'cancancan'
+
+#rswag
+gem 'rswag'

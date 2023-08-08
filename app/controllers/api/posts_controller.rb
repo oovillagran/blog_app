@@ -6,7 +6,7 @@ class Api::PostsController < ApplicationController
 
   def add_comment
     @post = Post.find(params[:id])
-    comment_text = params[:comment][:text]
+    comment_text = params[:text]
     @comment = @post.comments.build(text: comment_text, author: current_user)
     
     if @comment.save
