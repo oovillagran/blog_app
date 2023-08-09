@@ -8,7 +8,7 @@ class Api::PostsController < ApplicationController
     @post = Post.find(params[:id])
     comment_text = params[:text]
     @comment = @post.comments.build(text: comment_text, author: current_user)
-    
+
     if @comment.save
       render json: { message: 'Comment added successfully' }, status: :created
     else
@@ -16,4 +16,3 @@ class Api::PostsController < ApplicationController
     end
   end
 end
-
