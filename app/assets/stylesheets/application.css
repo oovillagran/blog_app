@@ -25,6 +25,8 @@ body {
   flex-direction: row;
   justify-content: space-around;
   padding: 1rem;
+  gap: 10rem;
+  margin-bottom: 0;
 }
 
 .new_user {

@@ -12,6 +12,7 @@ class Post < ApplicationRecord
 
   after_create :update_user_posts_counter
   after_create :initialize_counters
+  after_destroy :update_user_posts_counter
 
   def five_most_recent_comments
     comments.includes(:post, :author).order(created_at: :desc).limit(5)
